@@ -1,7 +1,5 @@
 [
-  "/about/index",
-  "/contact/index",
   "/index",
-  "/navbarComponent",
-  "/products/index"
+  "/list/index",
+  "/search/index"
 ]

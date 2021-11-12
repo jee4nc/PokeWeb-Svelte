@@ -2,10 +2,9 @@
   import { isActive, url } from "@roxi/routify";
 
   const links = [
-    ["./", "Home"], //add index if you don't want siblings to be considered children
-    ["./products", "Products"],
-    ["./about", "About"],
-    ["./contact", "Contact"],
+    ["./", "Home"],
+    ["./list", "Pokemon List"],
+    ["./search", "Pokemon Search"],
   ];
 </script>
 

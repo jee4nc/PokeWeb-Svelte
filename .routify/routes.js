@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.3
- * File generated Thu Nov 11 2021 15:20:13 GMT-0300 (Chile Summer Time)
+ * File generated Fri Nov 12 2021 09:31:53 GMT-0300 (Chile Summer Time)
  */
 
 export const __version = "2.18.3"
-export const __timestamp = "2021-11-11T18:20:13.318Z"
+export const __timestamp = "2021-11-12T12:31:53.799Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -24,104 +24,6 @@ export const _tree = {
   "ownMeta": {},
   "absolutePath": "src/pages",
   "children": [
-    {
-      "isFile": false,
-      "isDir": true,
-      "file": "about",
-      "filepath": "/about",
-      "name": "about",
-      "ext": "",
-      "badExt": false,
-      "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/about",
-      "children": [
-        {
-          "isFile": true,
-          "isDir": false,
-          "file": "index.svelte",
-          "filepath": "/about/index.svelte",
-          "name": "index",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/about/index.svelte",
-          "importPath": "../src/pages/about/index.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": true,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/about/index",
-          "id": "_about_index",
-          "component": () => import('../src/pages/about/index.svelte').then(m => m.default)
-        }
-      ],
-      "isLayout": false,
-      "isReset": false,
-      "isIndex": false,
-      "isFallback": false,
-      "isPage": false,
-      "ownMeta": {},
-      "meta": {
-        "recursive": true,
-        "preload": false,
-        "prerender": true
-      },
-      "path": "/about"
-    },
-    {
-      "isFile": false,
-      "isDir": true,
-      "file": "contact",
-      "filepath": "/contact",
-      "name": "contact",
-      "ext": "",
-      "badExt": false,
-      "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/contact",
-      "children": [
-        {
-          "isFile": true,
-          "isDir": false,
-          "file": "index.svelte",
-          "filepath": "/contact/index.svelte",
-          "name": "index",
-          "ext": "svelte",
-          "badExt": false,
-          "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/contact/index.svelte",
-          "importPath": "../src/pages/contact/index.svelte",
-          "isLayout": false,
-          "isReset": false,
-          "isIndex": true,
-          "isFallback": false,
-          "isPage": true,
-          "ownMeta": {},
-          "meta": {
-            "recursive": true,
-            "preload": false,
-            "prerender": true
-          },
-          "path": "/contact/index",
-          "id": "_contact_index",
-          "component": () => import('../src/pages/contact/index.svelte').then(m => m.default)
-        }
-      ],
-      "isLayout": false,
-      "isReset": false,
-      "isIndex": false,
-      "isFallback": false,
-      "isPage": false,
-      "ownMeta": {},
-      "meta": {
-        "recursive": true,
-        "preload": false,
-        "prerender": true
-      },
-      "path": "/contact"
-    },
     {
       "isFile": true,
       "isDir": false,
@@ -148,50 +50,25 @@ export const _tree = {
       "component": () => import('../src/pages/index.svelte').then(m => m.default)
     },
     {
-      "isFile": true,
-      "isDir": false,
-      "file": "navbarComponent.svelte",
-      "filepath": "/navbarComponent.svelte",
-      "name": "navbarComponent",
-      "ext": "svelte",
-      "badExt": false,
-      "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/navbarComponent.svelte",
-      "importPath": "../src/pages/navbarComponent.svelte",
-      "isLayout": false,
-      "isReset": false,
-      "isIndex": false,
-      "isFallback": false,
-      "isPage": true,
-      "ownMeta": {},
-      "meta": {
-        "recursive": true,
-        "preload": false,
-        "prerender": true
-      },
-      "path": "/navbarComponent",
-      "id": "_navbarComponent",
-      "component": () => import('../src/pages/navbarComponent.svelte').then(m => m.default)
-    },
-    {
       "isFile": false,
       "isDir": true,
-      "file": "products",
-      "filepath": "/products",
-      "name": "products",
+      "file": "list",
+      "filepath": "/list",
+      "name": "list",
       "ext": "",
       "badExt": false,
-      "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/products",
+      "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/list",
       "children": [
         {
           "isFile": true,
           "isDir": false,
           "file": "index.svelte",
-          "filepath": "/products/index.svelte",
+          "filepath": "/list/index.svelte",
           "name": "index",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/products/index.svelte",
-          "importPath": "../src/pages/products/index.svelte",
+          "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/list/index.svelte",
+          "importPath": "../src/pages/list/index.svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": true,
@@ -203,9 +80,9 @@ export const _tree = {
             "preload": false,
             "prerender": true
           },
-          "path": "/products/index",
-          "id": "_products_index",
-          "component": () => import('../src/pages/products/index.svelte').then(m => m.default)
+          "path": "/list/index",
+          "id": "_list_index",
+          "component": () => import('../src/pages/list/index.svelte').then(m => m.default)
         }
       ],
       "isLayout": false,
@@ -219,7 +96,56 @@ export const _tree = {
         "preload": false,
         "prerender": true
       },
-      "path": "/products"
+      "path": "/list"
+    },
+    {
+      "isFile": false,
+      "isDir": true,
+      "file": "search",
+      "filepath": "/search",
+      "name": "search",
+      "ext": "",
+      "badExt": false,
+      "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/search",
+      "children": [
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "index.svelte",
+          "filepath": "/search/index.svelte",
+          "name": "index",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "/Users/jee4nc/MegaTime/practice-mega/practiceSvelte/svelte-frontend/src/pages/search/index.svelte",
+          "importPath": "../src/pages/search/index.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": true,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/search/index",
+          "id": "_search_index",
+          "component": () => import('../src/pages/search/index.svelte').then(m => m.default)
+        }
+      ],
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": false,
+      "isPage": false,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/search"
     }
   ],
   "isLayout": false,
