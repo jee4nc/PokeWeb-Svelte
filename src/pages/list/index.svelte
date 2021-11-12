@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Pokemon } from "@interfaces/PokemonInterface";
-  import { getPoke } from "@services/PokemonServices";
-  import NavbarComponent from "@ccomponents/navbarComponent.svelte";
-  import CardComponent from "@components/list/cardComponent.svelte";
-  import BackButtonComponent from "@ccomponents/backButtonComponent.svelte";
+  import type { Pokemon } from "$interfaces/PokemonInterface";
+  import { getPoke } from "$services/PokemonServices";
+  import NavbarComponent from "$cComponent/navbarComponent.svelte";
+  import CardComponent from "$components/list/cardComponent.svelte";
+  import BackButtonComponent from "$cComponent/backButtonComponent.svelte";
 
   const link = "./";
   const titleB = "Back";

@@ -1,6 +1,6 @@
 <script>
   // Import component
-  import NavbarComponent from "../components/CommonComponents/navbarComponent.svelte";
+  import NavbarComponent from "$cComponent/navbarComponent.svelte";
   
 </script>
 

@@ -15,10 +15,10 @@
     "allowJs": true,
     "checkJs": true,
     "paths": {
-      "@services/*": ["src/services/*"],
-      "@components/*": ["src/components/*"],
-      "@interfaces/*": ["src/interfaces/*"],
-      "@ccomponents/*": ["src/components/CommonComponents/*"]
+      "$services/*": ["src/services/*"],
+      "$cComponent/*":["src/components/CommonComponents/*"],
+      "$components/*": ["src/components/*"],
+      "$interfaces/*": ["src/interfaces/*"],
     }
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
