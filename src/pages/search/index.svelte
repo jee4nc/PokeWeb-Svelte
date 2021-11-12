@@ -1,11 +1,11 @@
 <script>
   // Import component
-  import NavbarComponent from "../../modules/CommonComponents/navbarComponent.svelte";
+  import NavbarComponent from "../../components/CommonComponents/navbarComponent.svelte";
   const link = "./";
-  import { isActive, url } from "@roxi/routify";
 </script>
 
+<NavbarComponent></NavbarComponent>
 <div>
-  <a href={link}> Back </a>
+  <a href={link}> <button type="button" class="btn btn-primary">Back</button> </a>
 </div>
 <h1>Pokemon Search Component Here</h1>

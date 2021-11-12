@@ -1,6 +1,7 @@
 <script>
   // Import component
-  import NavbarComponent from "../modules/CommonComponents/navbarComponent.svelte";
+  import NavbarComponent from "../components/CommonComponents/navbarComponent.svelte";
+  
 </script>
 
 <div>
