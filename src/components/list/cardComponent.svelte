@@ -1,10 +1,17 @@
 <script>
   export let pokemon = {};
-  export let actionFunc;
 </script>
 
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="..." />
+  {#if !pokemon.name}
+    <img src="" class="card-img-top" alt="..." />
+  {:else}
+    <img
+      src={pokemon.sprites.front_default}
+      class="card-img-top"
+      alt="No hay imagen"
+    />
+  {/if}
   <div class="card-body">
     {#if pokemon.name}
       <h5 class="card-title">{pokemon.name}</h5>
@@ -15,8 +22,5 @@
       <h5 class="card-title">No hay nombre</h5>
       <p class="card-text">No hay tamaño</p>
     {/if}
-    <button class="btn btn-primary" on:click={() => actionFunc(pokemon)}>
-      Obtener
-    </button>
   </div>
 </div>

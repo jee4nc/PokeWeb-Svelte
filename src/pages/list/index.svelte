@@ -1,22 +1,11 @@
 <script lang="ts">
-  import type { Pokemon } from "$interfaces/PokemonInterface";
-  import { getPoke } from "$services/PokemonServices";
   import NavbarComponent from "$cComponent/navbarComponent.svelte";
-  import CardComponent from "$components/list/cardComponent.svelte";
   import BackButtonComponent from "$cComponent/backButtonComponent.svelte";
+  import SearchBarComponent from "$components/search/searchBarComponent.svelte";
 
   const link = "./";
   const titleB = "Back";
-  let pokemon: Pokemon = {
-    name: "",
-    height: 0,
-    base_experience: 0,
-  };
-
-  async function action(input) {
-    pokemon = await getPoke(input);
-    console.log("Aca es => ", pokemon);
-  }
+  const placeholderButton = "Add pokemon name"
 </script>
 
 <NavbarComponent />
@@ -24,4 +13,5 @@
 <h1>Pokemon List Component Here!</h1>
 <br />
 
-<CardComponent {pokemon} actionFunc={action} />
+<SearchBarComponent labelInput={placeholderButton}></SearchBarComponent>
+

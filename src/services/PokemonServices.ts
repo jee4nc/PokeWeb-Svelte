@@ -1,7 +1,12 @@
-import type { Pokemon } from "src/interfaces/PokemonInterface";
+export async function getPoke(inputSearch: string) {
+  const response = await fetch(
+    `https://pokeapi.co/api/v2/pokemon/${inputSearch}`
+  ).then((response) => response);
 
-export function getPoke(pokemon: Pokemon) {
-  return fetch("https://pokeapi.co/api/v2/pokemon/ditto").then((response) =>
-    response.json()
-  );
+  if (!response.ok) {
+    console.log("error");
+    return "Error!";
+  } else {
+    return await response.json();
+  }
 }
