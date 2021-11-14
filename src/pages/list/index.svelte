@@ -10,7 +10,9 @@
 
 <NavbarComponent />
 <BackButtonComponent {link} titleButton={titleB} />
-<h1>Pokemon List Component Here!</h1>
+<div style="text-align: center;">
+  <h1>Search your favorite pokemon here 👇</h1>
+</div>
 <br />
 
 <SearchBarComponent labelInput={placeholderButton}></SearchBarComponent>

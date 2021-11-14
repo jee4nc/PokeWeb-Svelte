@@ -17,6 +17,11 @@
     if (typeof something === "string" || something instanceof String) {
       alert("El nombre del pokemon no es valido");
       namepokemon = "";
+      pokemon = {
+        name: "",
+        height: 0,
+        base_experience: 0,
+      };
     } else {
       pokemon = something;
       namepokemon = "";
@@ -41,13 +46,12 @@
         class="btn btn-primary"
         on:click={() => actionButton(namepokemon)}>{buttonMessage}</button
       >
-      <h1>{namepokemon}</h1>
     </div>
   </div>
 </div>
-<br />
-
-<CardComponent {pokemon} />
+<div>
+  <CardComponent {pokemon} />
+</div>
 
 <style>
   .div-row {

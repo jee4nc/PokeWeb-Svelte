@@ -13,6 +13,7 @@ export default defineConfig({
       "$cComponent":path.resolve("./src/components/CommonComponents"),
       "$components": path.resolve("./src/components"),
       "$interfaces": path.resolve("./src/interfaces"),
+      "$utils" : path.resolve("./src/utils")
     }
   }
 });

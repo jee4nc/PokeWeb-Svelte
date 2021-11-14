@@ -16,9 +16,10 @@
     "checkJs": true,
     "paths": {
       "$services/*": ["src/services/*"],
-      "$cComponent/*":["src/components/CommonComponents/*"],
+      "$cComponent/*": ["src/components/CommonComponents/*"],
       "$components/*": ["src/components/*"],
       "$interfaces/*": ["src/interfaces/*"],
+      "$utils/*": ["src/utils/*"]
     }
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
