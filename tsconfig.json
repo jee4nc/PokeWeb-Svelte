@@ -16,7 +16,7 @@
     "checkJs": true,
     "paths": {
       "$services/*": ["src/services/*"],
-      "$cComponent/*": ["src/components/CommonComponents/*"],
+      "$share/*": ["src/share/*"],
       "$components/*": ["src/components/*"],
       "$interfaces/*": ["src/interfaces/*"],
       "$utils/*": ["src/utils/*"]

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import BackButtonComponent from "$cComponent/backButtonComponent.svelte";
+  import BackButtonComponent from "$share/backButtonComponent.svelte";
   import SearchBarComponent from "$components/search/searchBarComponent.svelte";
-  import DivTitle from "$cComponent/DivTitle.svelte";
+  import DivTitle from "$share/DivTitle.svelte";
   import { imgTitleList } from "$utils/constants";
 
   const link = "./";

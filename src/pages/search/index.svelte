@@ -1,7 +1,7 @@
 <script>
   // Import component
-  import BackButtonComponent from "$cComponent/backButtonComponent.svelte";
-  import DivTitle from "$cComponent/DivTitle.svelte";
+  import BackButtonComponent from "$share/backButtonComponent.svelte";
+  import DivTitle from "$share/DivTitle.svelte";
   import CardComponent from "$components/list/cardComponent.svelte";
   import RadioButtons from "$components/search/radioButtons.svelte";
   import { versusLogo, imgTitleSearch } from "$utils/constants";
