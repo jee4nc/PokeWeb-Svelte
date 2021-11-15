@@ -16,3 +16,5 @@ export const svelteIcon = "https://cdn.svgporn.com/logos/svelte-icon.svg";
 
 export const imgHome =
   "https://i.pinimg.com/originals/51/a6/bc/51a6bc8a9107cb0319807b4c0b0812ae.gif";
+
+export const errorIMG = "https://c.tenor.com/V348veK116EAAAAd/khaby-lame.gif";
