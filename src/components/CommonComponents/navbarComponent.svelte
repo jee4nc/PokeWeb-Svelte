@@ -1,5 +1,6 @@
 <script>
   import { url } from "@roxi/routify";
+  import { imgLogo } from "$utils/constantes";
 
   const links = [
     ["./list", "Pokemon List"],
@@ -8,9 +9,12 @@
   const baseRoute = "./";
 </script>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark navbarColor">
   <div class="container-fluid">
-    <a class="navbar-brand" href={baseRoute}>Home</a>
+    <a class="navbar-brand" href={baseRoute}>
+      <img src={imgLogo} alt="" width="30" height="24" />
+      PokeWeb
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -26,8 +30,8 @@
       <ul class="navbar-nav">
         {#each links as [path, name]}
           <!-- Svelte magic. If isActive is true, the "active" class is applied. -->
-          <li class="nav-item">
-            <a class="nav-link" href={$url("/" + path)}>
+          <li class="nav-item navColor">
+            <a class="nav-link " href={$url("/" + path)}>
               {name}
             </a>
           </li>
@@ -37,4 +41,15 @@
   </div>
 </nav>
 
-<style></style>
+<style>
+  .navbarColor {
+    background-color: rgb(221, 94, 86);
+  }
+  .navColor a {
+    color: white;
+    font-weight: 500;
+  }
+  .navColor:hover a {
+    text-decoration: underline;
+  }
+</style>

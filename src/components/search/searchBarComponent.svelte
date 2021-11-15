@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PopUpComponent from "$cComponent/popUpComponent.svelte";
   import CardComponent from "$components/list/cardComponent.svelte";
   import type { Pokemon } from "$interfaces/PokemonInterface";
   import { getPoke } from "$services/PokemonServices";
@@ -43,7 +44,7 @@
       <br />
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-danger"
         on:click={() => actionButton(namepokemon.toLowerCase())}
         >{buttonMessage}</button
       >

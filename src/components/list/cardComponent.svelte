@@ -21,7 +21,7 @@
 </script>
 
 <div style="text-align: center; margin-top:2.5rem">
-  <div class="card" style="width: 18rem; margin:auto">
+  <div class="card card_poke" style="width: 18rem; margin:auto">
     {#if !pokemon.name}
       <img src={imgDefault} class="card-img-top" alt="..." />
     {:else}
@@ -41,9 +41,6 @@
           Weight: {(pokemon.weight * 100) / 1000} Kg
         </p>
         <p class="card-text">
-          Weight: {(pokemon.weight * 100) / 1000} Kg
-        </p>
-        <p class="card-text">
           Type: {listType}
         </p>
       {:else}
@@ -53,3 +50,11 @@
     </div>
   </div>
 </div>
+
+<style>
+  .card_poke {
+    box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.57);
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.57);
+  }
+</style>
