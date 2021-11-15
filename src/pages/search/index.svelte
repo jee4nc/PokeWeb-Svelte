@@ -4,7 +4,7 @@
   import DivTitle from "$cComponent/DivTitle.svelte";
   import CardComponent from "$components/list/cardComponent.svelte";
   import RadioButtons from "$components/search/radioButtons.svelte";
-  import { versusLogo, imgTitleSearch } from "$utils/constantes";
+  import { versusLogo, imgTitleSearch } from "$utils/constants";
 
   const link = "./";
   export let labelInput = "Search your pokemon";

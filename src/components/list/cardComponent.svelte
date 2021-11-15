@@ -1,6 +1,6 @@
 <script>
   export let pokemon = {};
-  import { imgDefault } from "$utils/constantes";
+  import { imgDefault } from "$utils/constants";
   import { afterUpdate } from "svelte";
 
   // let listType = [];

@@ -1,34 +1,36 @@
 <script lang="ts">
   import CardComponent from "$components/list/cardComponent.svelte";
-  import type { Pokemon } from "$interfaces/PokemonInterface";
   import { getPokemon } from "$services/PokemonServices";
 
-  export let labelInput = "RandomMessage";
+  export let labelInput = "Search here!";
   export let buttonMessage = "Search";
-  let pokemon: Pokemon = {
-    name: "",
-    height: 0,
-    base_experience: 0,
-  };
+  let colorError = "";
+  let classInput = "form-control";
+  let pokemon = {};
   let namepokemon: string = "";
 
   // Make loading component
   async function handleSubmit() {
     // event.preventDefault()
-    let something: Object | String = await getPokemon(
-      namepokemon.toLowerCase()
-    );
-    if (typeof something === "string" || something instanceof String) {
+    // FIX validation if request its succesfully
+    try {
+      let receivedPokemon = await getPokemon(namepokemon.toLowerCase());
+      pokemon = receivedPokemon;
       namepokemon = "";
-      pokemon = {
-        name: "",
-        height: 0,
-        base_experience: 0,
-      };
-    } else {
-      pokemon = something;
+    } catch {
+      errorHandler();
       namepokemon = "";
     }
+  }
+  async function errorHandler() {
+    labelInput = "Invalid pokemon Name";
+    colorError = "border : 2px solid red";
+    classInput = "form-control animate__animated animate__shakeX";
+    setTimeout(() => {
+      labelInput = "Search here!";
+      colorError = "";
+      classInput = "form-control";
+    }, 3000);
   }
 </script>
 
@@ -38,7 +40,8 @@
       <form on:submit|preventDefault={handleSubmit}>
         <input
           type="text"
-          class="form-control"
+          class={classInput}
+          style={colorError}
           placeholder={labelInput}
           aria-label="Username"
           aria-describedby="basic-addon1"

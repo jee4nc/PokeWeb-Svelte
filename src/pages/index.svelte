@@ -1,7 +1,7 @@
 <script>
   // Import component
   import TitleHome from "$components/home/TitleHome.svelte";
-  import { svelteIcon, imgHome } from "$utils/constantes";
+  import { svelteIcon, imgHome } from "$utils/constants";
 </script>
 
 <div class="index">
