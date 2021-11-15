@@ -4,6 +4,7 @@
   import { afterUpdate } from "svelte";
 
   let listType = [];
+  export let classessCard =""
   let getTypes = function (input) {
     listType = [];
     if (pokemon.name) {
@@ -20,7 +21,7 @@
   });
 </script>
 
-<div style="text-align: center; margin-top:2.5rem">
+<div style="text-align: center; margin-top:2.5rem" class={classessCard}>
   <div class="card card_poke" style="width: 18rem; margin:auto">
     {#if !pokemon.name}
       <img src={imgDefault} class="card-img-top" alt="..." />

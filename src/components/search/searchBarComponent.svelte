@@ -1,5 +1,4 @@
 <script lang="ts">
-  import PopUpComponent from "$cComponent/popUpComponent.svelte";
   import CardComponent from "$components/list/cardComponent.svelte";
   import type { Pokemon } from "$interfaces/PokemonInterface";
   import { getPoke } from "$services/PokemonServices";
