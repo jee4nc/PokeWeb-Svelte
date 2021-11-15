@@ -12,5 +12,5 @@
   <BackButtonComponent {link} titleButton={titleB} />
   <DivTitle img={imgTitleList} title="Search your pokemon" />
   <br />
-  <SearchBarComponent />
+  <SearchBarComponent  />
 </div>

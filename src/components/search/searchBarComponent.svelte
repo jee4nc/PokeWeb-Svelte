@@ -1,6 +1,6 @@
 <script lang="ts">
   import CardComponent from "$components/list/cardComponent.svelte";
-  import { getPokemon } from "$services/PokemonServices";
+  import { getPokemon } from "$services/pokemonServices";
 
   export let labelInput = "Search here!";
   export let buttonMessage = "Search";
