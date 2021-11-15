@@ -1,26 +1,21 @@
 <script>
   // Import component
   import NavbarComponent from "$cComponent/navbarComponent.svelte";
+  import TitleHome from "$components/home/TitleHome.svelte";
+  import { svelteIcon, imgHome } from "$utils/constantes";
 </script>
 
-<div>
+<div class="index">
   <NavbarComponent />
 
   <div class="container">
-    <h1>
-      PokeWeb powered by Svelte <img
-        src="https://cdn.svgporn.com/logos/svelte-icon.svg"
-        width="40px"
-        alt="..."
-      />
-    </h1>
-    <br />
-    <img
-      src="https://i.pinimg.com/originals/51/a6/bc/51a6bc8a9107cb0319807b4c0b0812ae.gif"
-      alt="..."
+    <TitleHome
+      img={svelteIcon}
+      bigImg={imgHome}
+      title="PokeWeb powered by Svelte"
     />
   </div>
-</div>
+</div> 
 
 <style>
   .container {

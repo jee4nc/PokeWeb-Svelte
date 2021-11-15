@@ -2,17 +2,18 @@
   import NavbarComponent from "$cComponent/navbarComponent.svelte";
   import BackButtonComponent from "$cComponent/backButtonComponent.svelte";
   import SearchBarComponent from "$components/search/searchBarComponent.svelte";
+  import DivTitle from "$cComponent/DivTitle.svelte";
+  import { imgTitleList } from "$utils/constantes";
 
   const link = "./";
   const titleB = "Back";
   const placeholderButton = "Add pokemon name";
 </script>
 
-<NavbarComponent />
-<BackButtonComponent {link} titleButton={titleB} />
-<div style="text-align: center;">
-  <h1>Search your favorite pokemon here 👇</h1>
+<div class="index">
+  <NavbarComponent />
+  <BackButtonComponent {link} titleButton={titleB} />
+  <DivTitle img={imgTitleList} title="Search your pokemon" />
+  <br />
+  <SearchBarComponent labelInput={placeholderButton} />
 </div>
-<br />
-
-<SearchBarComponent labelInput={placeholderButton} />
