@@ -1,4 +1,5 @@
 export async function getPoke(inputSearch: string) {
+  let listType = [];
   const response = await fetch(
     `https://pokeapi.co/api/v2/pokemon/${inputSearch}`
   ).then((response) => response);
@@ -7,6 +8,7 @@ export async function getPoke(inputSearch: string) {
     console.log("error");
     return "Error!";
   } else {
-    return await response.json();
+    let json_response = await response.json();
+    return json_response;
   }
 }

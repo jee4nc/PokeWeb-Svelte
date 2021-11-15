@@ -44,7 +44,8 @@
       <button
         type="button"
         class="btn btn-primary"
-        on:click={() => actionButton(namepokemon)}>{buttonMessage}</button
+        on:click={() => actionButton(namepokemon.toLowerCase())}
+        >{buttonMessage}</button
       >
     </div>
   </div>

@@ -5,7 +5,7 @@
 
   const link = "./";
   const titleB = "Back";
-  const placeholderButton = "Add pokemon name"
+  const placeholderButton = "Add pokemon name";
 </script>
 
 <NavbarComponent />
@@ -15,5 +15,4 @@
 </div>
 <br />
 
-<SearchBarComponent labelInput={placeholderButton}></SearchBarComponent>
-
+<SearchBarComponent labelInput={placeholderButton} />
