@@ -1,6 +1,6 @@
 <script lang="ts">
   export let link;
-  export let titleButton = "back";
+  export let titleButton = "Back";
 </script>
 
 <div class="buttonBack">

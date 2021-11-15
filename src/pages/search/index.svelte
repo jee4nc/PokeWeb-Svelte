@@ -1,11 +1,10 @@
 <script>
   // Import component
+  import BackButtonComponent from "$cComponent/backButtonComponent.svelte";
   import NavbarComponent from "$cComponent/navbarComponent.svelte";
   const link = "./";
 </script>
 
-<NavbarComponent></NavbarComponent>
-<div>
-  <a href={link}> <button type="button" class="btn btn-primary">Back</button> </a>
-</div>
+<NavbarComponent />
+<BackButtonComponent {link} />
 <h1>Check the evolution chain</h1>

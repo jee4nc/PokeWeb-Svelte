@@ -5,7 +5,7 @@
   import { getPoke } from "$services/PokemonServices";
 
   export let labelInput = "RandomMessage";
-  export let buttonMessage = "Search!";
+  export let buttonMessage = "Search";
   let pokemon: Pokemon = {
     name: "",
     height: 0,
@@ -46,7 +46,8 @@
         type="button"
         class="btn btn-danger"
         on:click={() => actionButton(namepokemon.toLowerCase())}
-        >{buttonMessage}</button
+        >{buttonMessage}
+        <i class="fas fa-search" /></button
       >
     </div>
   </div>
