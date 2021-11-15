@@ -7,8 +7,14 @@
   <NavbarComponent />
 
   <div class="container">
-    <h1>PokeWeb powered by Svelte</h1>
-    <br>
+    <h1>
+      PokeWeb powered by Svelte <img
+        src="https://cdn.svgporn.com/logos/svelte-icon.svg"
+        width="40px"
+        alt="..."
+      />
+    </h1>
+    <br />
     <img
       src="https://i.pinimg.com/originals/51/a6/bc/51a6bc8a9107cb0319807b4c0b0812ae.gif"
       alt="..."
