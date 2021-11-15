@@ -3,21 +3,22 @@
   import { imgDefault } from "$utils/constantes";
   import { afterUpdate } from "svelte";
 
-  let listType = [];
-  export let classessCard =""
-  let getTypes = function (input) {
-    listType = [];
-    if (pokemon.name) {
-      let types1 = input.types;
-      let array1 = Object.keys(types1).map((key) => [Number(key), types1[key]]);
-      for (let i = 0; i < array1.length; i++) {
-        listType.push(array1[i][1].type.name);
-      }
-    }
-  };
+  // let listType = [];
+  export let classessCard = "";
+  // Sacalo de aqui to servicio
+  // let getTypes = function (input) {
+  //   listType = [];
+  //   if (pokemon.name) {
+  //     let types1 = input.types;
+  //     let array1 = Object.keys(types1).map((key) => [Number(key), types1[key]]);
+  //     for (let i = 0; i < array1.length; i++) {
+  //       listType.push(array1[i][1].type.name);
+  //     }
+  //   }
+  // };
 
   afterUpdate(() => {
-    getTypes(pokemon);
+    // getTypes(pokemon);
   });
 </script>
 
@@ -27,7 +28,7 @@
       <img src={imgDefault} class="card-img-top" alt="..." />
     {:else}
       <img
-        src={pokemon.sprites.front_default}
+        src={pokemon.front_default}
         class="card-img-top"
         alt="No hay imagen"
       />
@@ -41,9 +42,9 @@
         <p class="card-text">
           Weight: {(pokemon.weight * 100) / 1000} Kg
         </p>
-        <p class="card-text">
+        <!-- <p class="card-text">
           Type: {listType}
-        </p>
+        </p> -->
       {:else}
         <h5 class="card-title">No hay nombre</h5>
         <p class="card-text">No hay tamaño</p>

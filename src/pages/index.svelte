@@ -1,13 +1,10 @@
 <script>
   // Import component
-  import NavbarComponent from "$cComponent/navbarComponent.svelte";
   import TitleHome from "$components/home/TitleHome.svelte";
   import { svelteIcon, imgHome } from "$utils/constantes";
 </script>
 
 <div class="index">
-  <NavbarComponent />
-
   <div class="container">
     <TitleHome
       img={svelteIcon}
@@ -15,7 +12,7 @@
       title="PokeWeb powered by Svelte"
     />
   </div>
-</div> 
+</div>
 
 <style>
   .container {

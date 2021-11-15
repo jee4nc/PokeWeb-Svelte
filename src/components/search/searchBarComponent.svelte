@@ -1,7 +1,7 @@
 <script lang="ts">
   import CardComponent from "$components/list/cardComponent.svelte";
   import type { Pokemon } from "$interfaces/PokemonInterface";
-  import { getPoke } from "$services/PokemonServices";
+  import { getPokemon } from "$services/PokemonServices";
 
   export let labelInput = "RandomMessage";
   export let buttonMessage = "Search";
@@ -12,10 +12,13 @@
   };
   let namepokemon: string = "";
 
-  async function actionButton(input) {
-    let something: Object | String = await getPoke(input);
+  // Make loading component
+  async function handleSubmit() {
+    // event.preventDefault()
+    let something: Object | String = await getPokemon(
+      namepokemon.toLowerCase()
+    );
     if (typeof something === "string" || something instanceof String) {
-      alert("El nombre del pokemon no es valido");
       namepokemon = "";
       pokemon = {
         name: "",
@@ -32,28 +35,25 @@
 <div class="container">
   <div class="row div-row">
     <div class="col-4 card-div">
-      <input
-        type="text"
-        class="form-control"
-        placeholder={labelInput}
-        aria-label="Username"
-        aria-describedby="basic-addon1"
-        bind:value={namepokemon}
-      />
-      <br />
-      <button
-        type="button"
-        class="btn btn-danger"
-        on:click={() => actionButton(namepokemon.toLowerCase())}
-        >{buttonMessage}
-        <i class="fas fa-search" /></button
-      >
+      <form on:submit|preventDefault={handleSubmit}>
+        <input
+          type="text"
+          class="form-control"
+          placeholder={labelInput}
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          bind:value={namepokemon}
+        />
+        <br />
+        <button type="submit" class="btn btn-danger"
+          >{buttonMessage}
+          <i class="fas fa-search" /></button
+        >
+      </form>
     </div>
   </div>
 </div>
-<div>
-  <CardComponent {pokemon} />
-</div>
+<CardComponent {pokemon} />
 
 <style>
   .div-row {

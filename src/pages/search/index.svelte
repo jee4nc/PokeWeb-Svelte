@@ -2,7 +2,6 @@
   // Import component
   import BackButtonComponent from "$cComponent/backButtonComponent.svelte";
   import DivTitle from "$cComponent/DivTitle.svelte";
-  import NavbarComponent from "$cComponent/navbarComponent.svelte";
   import CardComponent from "$components/list/cardComponent.svelte";
   import RadioButtons from "$components/search/radioButtons.svelte";
   import { versusLogo, imgTitleSearch } from "$utils/constantes";
@@ -17,7 +16,6 @@
 </script>
 
 <div class="index">
-  <NavbarComponent />
   <BackButtonComponent {link} />
   <DivTitle img={imgTitleSearch} title="Pokemon Versus" />
   <div class="searchBar row">
