@@ -2,6 +2,7 @@
   import CardComponent from "$components/list/cardComponent.svelte";
   import { getPokemon } from "$services/pokemonServices";
   import { errorPokemonDefault } from "$src/stores/errorPokemon";
+  // import { errorHandler } from "$utils/sharedFunctions";
 
   export let labelInput = "Search here!";
   export let buttonMessage = "Search";
@@ -14,17 +15,14 @@
   async function handleSubmit() {
     // event.preventDefault()
     // FIX validation if request its succesfully
+    // Change names of var
     try {
-      let receivedPokemon = await getPokemon(namepokemon.toLowerCase());
+      const receivedPokemon = await getPokemon(namepokemon.toLowerCase());
       pokemon = receivedPokemon;
       namepokemon = "";
     } catch {
-      errorHandler();
+      await errorHandler();
       pokemon = $errorPokemonDefault;
-      console.log("=====");
-
-      console.log(pokemon);
-
       namepokemon = "";
     }
   }
