@@ -4,7 +4,7 @@
 
   const links = [
     ["./list", "Pokemon List"],
-    ["./search", "Pokemon Search"],
+    ["./search", "Pokemon Versus"],
   ];
   const baseRoute = "./";
 </script>

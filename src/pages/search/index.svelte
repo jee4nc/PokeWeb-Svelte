@@ -11,6 +11,7 @@
     baseLink,
     errorPokemonDefault,
     radioValues,
+    imgFight,
   } from "$utils/constants";
 
   let labelInput = "Search your pokemon";
@@ -24,6 +25,10 @@
 
   function assignPokemon(pokemon) {
     pk[valueRadioButton] = pokemon;
+  }
+
+  function sendAlert() {
+    alert("Trigger fight");
   }
 
   async function actionSearchButton() {
@@ -69,6 +74,16 @@
           alt="VS"
           style="max-width: 100%;"
         />
+
+        <button
+          type="button"
+          class="btn btn-outline-danger btn-lg"
+          on:click={sendAlert}
+        >
+          <img src={imgFight} alt="" style="max-width: 42px;" />
+          <strong>Fight</strong>
+          <img src={imgFight} alt="" style="max-width: 42px;" /></button
+        >
       </div>
       <CardComponent classessCard="col-4" pokemon={pk[radioValues.rigth]} />
     </div>
@@ -84,5 +99,8 @@
   }
   .margincito {
     padding-top: 10px;
+  }
+  .vsClass {
+    text-align: center;
   }
 </style>

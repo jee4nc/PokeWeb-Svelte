@@ -29,6 +29,9 @@ export const errorPokemonDefault = {
   base_experience: 0,
 };
 
+export const imgFight =
+  "http://pa1.narvii.com/6165/71791ff6026d7c63ac3d2f4f2e8486b8636b69ef_00.gif";
+
 export const radioValues = {
   left: 1,
   rigth: 2,
