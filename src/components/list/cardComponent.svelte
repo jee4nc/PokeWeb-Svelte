@@ -4,7 +4,7 @@
   export let classessCard = "";
 </script>
 
-<div style="text-align: center; margin-top:2.5rem" class={classessCard}>
+<div style="text-align: center;" class={classessCard}>
   <div class="card card_poke" style="width: 18rem; margin:auto">
     {#if !pokemon.name}
       <img src={imgDefault} class="card-img-top" alt="..." />

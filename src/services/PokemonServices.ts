@@ -1,6 +1,4 @@
 import _ from "lodash";
-import { errorPokemonDefault } from "$src/stores/errorPokemon";
-// TODO: I should create const with error default object
 
 export async function extractData(response) {
   if (!response.ok) {
@@ -36,7 +34,7 @@ export function getTypes(data) {
 export async function getPokemon(inputSearch: string) {
   try {
     const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${inputSearch}`
+      `https://pokeapi.co/api/v2/pokemon/${inputSearch.toLowerCase()}`
     );
     return extractData(response);
   } catch (err) {

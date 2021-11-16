@@ -4,47 +4,64 @@
   import DivTitle from "$share/DivTitle.svelte";
   import CardComponent from "$components/list/cardComponent.svelte";
   import RadioButtons from "$components/search/radioButtons.svelte";
-  import { versusLogo, imgTitleSearch } from "$utils/constants";
+  import { getPokemon } from "$services/pokemonServices";
+  import {
+    versusLogo,
+    imgTitleSearch,
+    baseLink,
+    errorPokemonDefault,
+    radioValues,
+  } from "$utils/constants";
 
-  const link = "./";
-  export let labelInput = "Search your pokemon";
-  let buttonMessage = "Search";
+  let labelInput = "Search your pokemon";
   let namepokemon = "";
-  function actionButton() {
-    alert("Hola");
+  let valueRadioButton;
+  let pk = {};
+
+  for (let valueButton in radioValues) {
+    pk[radioValues[valueButton]] = {};
+  }
+
+  function assignPokemon(pokemon) {
+    pk[valueRadioButton] = pokemon;
+  }
+
+  async function actionSearchButton() {
+    try {
+      const receivedPokemon = await getPokemon(namepokemon);
+      assignPokemon(receivedPokemon);
+      namepokemon = "";
+    } catch {
+      assignPokemon(errorPokemonDefault);
+      namepokemon = "";
+    }
   }
 </script>
 
 <div class="index">
-  <BackButtonComponent {link} />
+  <BackButtonComponent link={baseLink} />
   <DivTitle img={imgTitleSearch} title="Pokemon Versus" />
   <div class="searchBar row">
     <div class="col-4" />
     <div class="col-4 card-div">
-      <input
-        type="text"
-        class="form-control"
-        placeholder={labelInput}
-        aria-label="Username"
-        aria-describedby="basic-addon1"
-        bind:value={namepokemon}
-      />
-      <br />
-      <RadioButtons />
-      <br />
-      <br />
-      <button
-        type="button"
-        class="btn btn-danger"
-        on:click={() => actionButton()}
-        >{buttonMessage}
-        <i class="fas fa-search" /></button
-      >
+      <form on:submit|preventDefault={actionSearchButton}>
+        <input
+          type="text"
+          class="form-control"
+          placeholder={labelInput}
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          bind:value={namepokemon}
+        />
+        <div class="margincito">
+          <RadioButtons bind:radioButton={valueRadioButton} />
+        </div>
+      </form>
     </div>
   </div>
   <div class="container">
-    <div class="row">
-      <CardComponent classessCard="col-4" />
+    <div class="row testing">
+      <CardComponent classessCard="col-4" pokemon={pk[radioValues.left]} />
       <div class="col-4 vsClass">
         <img
           class="animate__animated animate__bounce"
@@ -53,7 +70,7 @@
           style="max-width: 100%;"
         />
       </div>
-      <CardComponent classessCard="col-4" />
+      <CardComponent classessCard="col-4" pokemon={pk[radioValues.rigth]} />
     </div>
   </div>
 </div>
@@ -64,5 +81,8 @@
   }
   .container {
     margin-top: 5em;
+  }
+  .margincito {
+    padding-top: 10px;
   }
 </style>
