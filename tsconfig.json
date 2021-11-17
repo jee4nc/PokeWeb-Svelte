@@ -21,6 +21,7 @@
       "$components/*": ["src/lib/components/*"],
       "$interfaces/*": ["src/lib/interfaces/*"],
       "$constants/*": ["src/lib/constants/*"],
+      "$store/*": ["src/lib/store/*"],
       "$utils/*": ["src/lib/utils/*"],
       "$static/*": ["static/*"]
     }

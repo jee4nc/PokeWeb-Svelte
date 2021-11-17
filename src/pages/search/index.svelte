@@ -7,31 +7,32 @@
   import { getPokemon } from "$services/pokemon";
   import { versusLogo, imgTitleSearch, baseLink } from "$constants/links";
   import { errorPokemonDefault } from "$constants/errors";
-  import { radioValues } from "$constants/search";
+  import { pokemons } from "$store/search";
 
   let labelInput: string = "Search your pokemon";
-  let namePokemon: string = "";
-  let valueRadioButton: number;
-
-  let pokemons = [];
-
-  for (let valueButton in radioValues) {
-    pokemons[valueButton] = {};
-  }
+  let searchName: string = "";
+  let selectedPokemon: number;
 
   function assignPokemon(pokemon: any) {
-    pokemons[valueRadioButton] = pokemon;
+    if ($pokemons.length == 0) {
+      $pokemons = [...$pokemons, pokemon];
+    } else {
+      $pokemons[selectedPokemon] = pokemon;
+    }
+    searchName = "";
   }
 
   async function actionSearchButton() {
     try {
-      const receivedPokemon = await getPokemon(namePokemon);
+      const receivedPokemon = await getPokemon(searchName);
       assignPokemon(receivedPokemon);
-      namePokemon = "";
     } catch {
       assignPokemon(errorPokemonDefault);
-      namePokemon = "";
     }
+  }
+
+  function newPokemon() {
+    $pokemons = [...$pokemons, {}];
   }
 </script>
 
@@ -41,27 +42,29 @@
   <div class="searchBar row">
     <div class="col-4" />
     <div class="col-4 card-div">
-      <form on:submit|preventDefault={actionSearchButton}>
-        <input
-          type="text"
-          class="form-control"
-          placeholder={labelInput}
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-          bind:value={namePokemon}
-        />
-        <!-- bindRadioButton get the value of child component -->
-        <div class="margincito">
-          <RadioButtons bind:radioButton={valueRadioButton} />
-        </div>
-      </form>
+      <div style="display: flex;">
+        <form on:submit|preventDefault={actionSearchButton} style="width:100%">
+          <input
+            type="text"
+            class="form-control"
+            placeholder={labelInput}
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            bind:value={searchName}
+          />
+        </form>
+        <button on:click={newPokemon}> add </button>
+      </div>
+      <div class="margincito">
+        <RadioButtons bind:value={selectedPokemon} />
+      </div>
     </div>
   </div>
   <div class="container">
     <div class="row testing">
-      {#each Object.entries(pokemons) as [key, values], i}
+      {#each Object.entries($pokemons) as [key, values], i}
         <Card classessCard="col-4" pokemon={values} />
-        {#if i + 1 != Object.entries(pokemons).length}
+        {#if i + 1 != Object.entries($pokemons).length}
           <div class="col-4 vsClass">
             <img
               class="animate__animated animate__bounce"
