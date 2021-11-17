@@ -29,7 +29,14 @@ export const errorPokemonDefault = {
   base_experience: 0,
 };
 
-export const radioValues = {
-  left: 1,
-  rigth: 2,
-};
+export const radioValues = [
+  {
+    title: 'Left Pokemon',
+    class: 'fa-chevron-left',
+  },
+  {
+    title: 'Rigth Pokemon',
+    class: 'fa-chevron-right',
+  }
+]
+
