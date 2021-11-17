@@ -1,5 +1,3 @@
-
-// You should use types
 export interface Pokemon {
   name?: String;
   height?: Number;

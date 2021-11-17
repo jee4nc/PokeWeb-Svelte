@@ -1,12 +1,13 @@
 import _ from "lodash";
 
-export async function extractData(response) {
+export async function extractData(response: any) {
   if (!response.ok) {
     throw "Error in request!";
   }
+
   try {
     const data: any = await response.json();
-    const types = await getTypes(data);
+    const types = getTypes(data);
     const { front_default } = data.sprites;
     const filteredData = _.pick(data, [
       "name",
@@ -15,6 +16,7 @@ export async function extractData(response) {
       "base_experience",
     ]);
     const result = { ...filteredData, front_default, types };
+
     return result;
   } catch (err) {
     // FIXME: Arregla esto, deberia retornar algo en concreto, no un void Object
@@ -22,7 +24,7 @@ export async function extractData(response) {
   }
 }
 
-export function getTypes(data) {
+export function getTypes(data: any) {
   let arrayHandler = [];
   let typesArray = data.types;
   for (let type of typesArray) {
@@ -31,10 +33,10 @@ export function getTypes(data) {
   return arrayHandler;
 }
 
-export async function getPokemon(inputSearch: string) {
+export async function getPokemon(namePokemon: string) {
   try {
     const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${inputSearch.toLowerCase()}`
+      `https://pokeapi.co/api/v2/pokemon/${namePokemon.toLowerCase()}`
     );
     return extractData(response);
   } catch (err) {

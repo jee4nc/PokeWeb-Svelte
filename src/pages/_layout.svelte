@@ -1,7 +1,7 @@
-<script>
-  import NavbarComponent from "$share/navbarComponent.svelte";
+<script lang="ts">
+  import Navbar from "$share/Navbar.svelte";
 </script>
 
-<NavbarComponent />
+<Navbar />
 <slot />
 <!-- // Read the documentation of this  -->

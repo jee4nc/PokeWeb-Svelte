@@ -1,7 +1,7 @@
-<script>
-  export let title = "";
-  export let img = "";
-  export let bigImg = "";
+<script lang="ts">
+  export let title: string = "";
+  export let img: string = "";
+  export let bigImg: string = "";
 </script>
 
 <div class="TitleHome">

@@ -1,19 +1,18 @@
 <script lang="ts">
-  import CardComponent from "$components/list/cardComponent.svelte";
-  import { getPokemon } from "$services/pokemonServices";
-  // import { errorHandler } from "$utils/sharedFunctions";
+  import Card from "$components/list/Card.svelte";
+  import { getPokemon } from "$services/pokemon";
   import { errorPokemonDefault } from "$utils/constants";
 
-  export let labelInput = "Search here!";
-  export let buttonMessage = "Search";
-  let colorError = "";
-  let classInput = "form-control";
+  export let labelInput: string = "Search here!";
+  export let buttonMessage: string = "Search";
+
+  let colorError: string = "";
+  let classInput: string = "form-control";
   let pokemon = {};
   let namepokemon: string = "";
 
   // Make loading component
   async function handleSubmit() {
-    // event.preventDefault()
     // FIX validation if request its succesfully
     // Change names of var
     try {
@@ -26,6 +25,7 @@
       namepokemon = "";
     }
   }
+
   async function errorHandler() {
     labelInput = "Invalid pokemon Name";
     colorError = "border : 2px solid red";
@@ -60,7 +60,7 @@
     </div>
   </div>
 </div>
-<CardComponent {pokemon} />
+<Card {pokemon} />
 
 <style>
   .div-row {

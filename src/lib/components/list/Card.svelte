@@ -1,6 +1,7 @@
-<script>
-  export let pokemon = {};
+<script lang="ts">
   import { imgDefault } from "$utils/constants";
+
+  export let pokemon: any;
   export let classessCard = "";
 </script>
 

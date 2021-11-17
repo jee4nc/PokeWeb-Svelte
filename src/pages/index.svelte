@@ -1,5 +1,4 @@
-<script>
-  // Import component
+<script lang="ts">
   import TitleHome from "$components/home/TitleHome.svelte";
   import { svelteIcon, imgHome } from "$utils/constants";
 </script>

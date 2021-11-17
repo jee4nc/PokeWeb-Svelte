@@ -10,11 +10,12 @@ export default defineConfig({
   resolve: {
     alias: {
       $src: path.resolve("./src"),
-      $services: path.resolve("./src/services"),
-      $share: path.resolve("./src/share/"),
-      $components: path.resolve("./src/components"),
-      $interfaces: path.resolve("./src/interfaces"),
-      $utils: path.resolve("./src/utils"),
+      $static: path.resolve("./static"),
+      $services: path.resolve("./src/lib/services"),
+      $share: path.resolve("./src/lib/share"),
+      $components: path.resolve("./src/lib/components"),
+      $interfaces: path.resolve("./src/lib/interfaces"),
+      $utils: path.resolve("./src/lib/utils"),
     },
   },
 });

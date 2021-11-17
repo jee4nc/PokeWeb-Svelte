@@ -1,16 +1,16 @@
 <script lang="ts">
-  import BackButtonComponent from "$share/backButtonComponent.svelte";
-  import SearchBarComponent from "$components/search/searchBarComponent.svelte";
+  import BackButton from "$share/BackButton.svelte";
+  import SearchBar from "$components/search/SearchBar.svelte";
   import DivTitle from "$share/DivTitle.svelte";
   import { imgTitleList } from "$utils/constants";
 
-  const link = "./";
-  const titleB = "Back";
+  const link: string = "./";
+  const titleBack: string = "Back";
 </script>
 
 <div class="index">
-  <BackButtonComponent {link} titleButton={titleB} />
+  <BackButton {link} titleButton={titleBack} />
   <DivTitle img={imgTitleList} title="Search your pokemon" />
   <br />
-  <SearchBarComponent  />
+  <SearchBar />
 </div>

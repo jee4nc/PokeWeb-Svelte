@@ -1,52 +1,45 @@
-<script>
-  // Import component
-  import BackButtonComponent from "$share/backButtonComponent.svelte";
+<script lang="ts">
+  import BackButton from "$share/BackButton.svelte";
   import DivTitle from "$share/DivTitle.svelte";
-  import CardComponent from "$components/list/cardComponent.svelte";
-  import RadioButtons from "$components/search/radioButtons.svelte";
-  import { getPokemon } from "$services/pokemonServices";
+  import Card from "$components/list/Card.svelte";
+  import RadioButtons from "$components/search/RadioButtons.svelte";
+  import { getPokemon } from "$services/pokemon";
   import {
     versusLogo,
     imgTitleSearch,
     baseLink,
     errorPokemonDefault,
     radioValues,
-    imgFight,
   } from "$utils/constants";
 
-  let labelInput = "Search your pokemon";
-  let namepokemon = "";
-  // valueRadioButton is the value from child radioButton to this father component
-  let valueRadioButton;
+  let labelInput: string = "Search your pokemon";
+  let namePokemon: string = "";
+  let valueRadioButton: number;
 
-  let pk = [];
+  let pokemons = [];
 
   for (let valueButton in radioValues) {
-    pk[valueButton] = {};
+    pokemons[valueButton] = {};
   }
 
-  function assignPokemon(pokemon) {
-    pk[valueRadioButton] = pokemon;
-  }
-
-  function sendAlert() {
-    alert("Trigger fight");
+  function assignPokemon(pokemon: any) {
+    pokemons[valueRadioButton] = pokemon;
   }
 
   async function actionSearchButton() {
     try {
-      const receivedPokemon = await getPokemon(namepokemon);
+      const receivedPokemon = await getPokemon(namePokemon);
       assignPokemon(receivedPokemon);
-      namepokemon = "";
+      namePokemon = "";
     } catch {
       assignPokemon(errorPokemonDefault);
-      namepokemon = "";
+      namePokemon = "";
     }
   }
 </script>
 
 <div class="index">
-  <BackButtonComponent link={baseLink} />
+  <BackButton link={baseLink} />
   <DivTitle img={imgTitleSearch} title="Pokemon Versus" />
   <div class="searchBar row">
     <div class="col-4" />
@@ -58,7 +51,7 @@
           placeholder={labelInput}
           aria-label="Username"
           aria-describedby="basic-addon1"
-          bind:value={namepokemon}
+          bind:value={namePokemon}
         />
         <!-- bindRadioButton get the value of child component -->
         <div class="margincito">
@@ -69,9 +62,9 @@
   </div>
   <div class="container">
     <div class="row testing">
-      {#each Object.entries(pk) as [key, values], i}
-        <CardComponent classessCard="col-4" pokemon={values} />
-        {#if i + 1 != Object.entries(pk).length}
+      {#each Object.entries(pokemons) as [key, values], i}
+        <Card classessCard="col-4" pokemon={values} />
+        {#if i + 1 != Object.entries(pokemons).length}
           <div class="col-4 vsClass">
             <img
               class="animate__animated animate__bounce"

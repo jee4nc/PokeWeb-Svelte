@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let radioButton = 1;
   import { radioValues } from "$utils/constants";
-  console.log(radioValues);
+
+  export let radioButton: number = 0;
 </script>
 
 <div
