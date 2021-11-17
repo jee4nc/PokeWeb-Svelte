@@ -15,6 +15,7 @@ export default defineConfig({
       $share: path.resolve("./src/lib/share"),
       $components: path.resolve("./src/lib/components"),
       $interfaces: path.resolve("./src/lib/interfaces"),
+      $constants: path.resolve("src/lib/constants"),
       $utils: path.resolve("./src/lib/utils"),
     },
   },

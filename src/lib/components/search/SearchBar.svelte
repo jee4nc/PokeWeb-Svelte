@@ -1,7 +1,7 @@
 <script lang="ts">
   import Card from "$components/list/Card.svelte";
   import { getPokemon } from "$services/pokemon";
-  import { errorPokemonDefault } from "$utils/constants";
+  import { errorPokemonDefault } from "$constants/errors";
 
   export let labelInput: string = "Search here!";
   export let buttonMessage: string = "Search";

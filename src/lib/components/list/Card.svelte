@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { imgDefault } from "$utils/constants";
+  import { imgDefault } from "$constants/links";
 
   export let pokemon: any;
   export let classessCard = "";

@@ -2,7 +2,8 @@
   import BackButton from "$share/BackButton.svelte";
   import SearchBar from "$components/search/SearchBar.svelte";
   import DivTitle from "$share/DivTitle.svelte";
-  import { imgTitleList } from "$utils/constants";
+
+  import { imgTitleList } from "$constants/links";
 
   const link: string = "./";
   const titleBack: string = "Back";

@@ -3,14 +3,11 @@
   import DivTitle from "$share/DivTitle.svelte";
   import Card from "$components/list/Card.svelte";
   import RadioButtons from "$components/search/RadioButtons.svelte";
+
   import { getPokemon } from "$services/pokemon";
-  import {
-    versusLogo,
-    imgTitleSearch,
-    baseLink,
-    errorPokemonDefault,
-    radioValues,
-  } from "$utils/constants";
+  import { versusLogo, imgTitleSearch, baseLink } from "$constants/links";
+  import { errorPokemonDefault } from "$constants/errors";
+  import { radioValues } from "$constants/search";
 
   let labelInput: string = "Search your pokemon";
   let namePokemon: string = "";

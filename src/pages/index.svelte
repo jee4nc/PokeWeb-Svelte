@@ -1,6 +1,6 @@
 <script lang="ts">
   import TitleHome from "$components/home/TitleHome.svelte";
-  import { svelteIcon, imgHome } from "$utils/constants";
+  import { svelteIcon, imgHome } from "$constants/links";
 </script>
 
 <div class="index">

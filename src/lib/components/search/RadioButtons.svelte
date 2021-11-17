@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { radioValues } from "$utils/constants";
+  import { radioValues } from "$constants/search";
 
   export let radioButton: number = 0;
 </script>

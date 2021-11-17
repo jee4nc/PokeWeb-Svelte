@@ -1,6 +1,6 @@
 <script lang="ts">
   import { url } from "@roxi/routify";
-  import { imgLogo } from "$utils/constants";
+  import { imgLogo } from "$constants/links";
 
   const links = [
     ["./list", "Pokemon List"],
