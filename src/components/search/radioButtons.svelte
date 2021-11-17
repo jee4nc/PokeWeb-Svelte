@@ -8,6 +8,8 @@
   role="group"
   aria-label="Basic radio toggle button group"
 >
+  <!-- Pass the const value left right to value into button -->
+  <!-- Bind group works to select value into buttons -->
   <input
     type="radio"
     class="btn-check"

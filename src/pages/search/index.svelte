@@ -16,6 +16,7 @@
 
   let labelInput = "Search your pokemon";
   let namepokemon = "";
+  // valueRadioButton is the value from child radioButton to this father component
   let valueRadioButton;
   let pk = {};
 
@@ -58,6 +59,7 @@
           aria-describedby="basic-addon1"
           bind:value={namepokemon}
         />
+        <!-- bindRadioButton get the value of child component -->
         <div class="margincito">
           <RadioButtons bind:radioButton={valueRadioButton} />
         </div>
