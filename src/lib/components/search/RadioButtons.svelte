@@ -6,7 +6,7 @@
   function removePokemon(index: number) {
     $pokemons.splice(index, 1);
     $pokemons = $pokemons;
-  }
+  } 
 </script>
 
 <div

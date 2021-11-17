@@ -62,9 +62,9 @@
   </div>
   <div class="container">
     <div class="row testing">
-      {#each Object.entries($pokemons) as [key, values], i}
-        <Card classessCard="col-4" pokemon={values} />
-        {#if i + 1 != Object.entries($pokemons).length}
+      {#each $pokemons as pokemon, i}
+        <Card classessCard="col-4" pokemon={pokemon} />
+        {#if i + 1 != $pokemons.length}
           <div class="col-4 vsClass">
             <img
               class="animate__animated animate__bounce"
