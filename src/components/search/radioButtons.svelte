@@ -1,6 +1,7 @@
 <script lang="ts">
   export let radioButton = 1;
   import { radioValues } from "$utils/constants";
+  console.log(radioValues);
 </script>
 
 <div
@@ -8,31 +9,18 @@
   role="group"
   aria-label="Basic radio toggle button group"
 >
-  <!-- Pass the const value left right to value into button -->
-  <!-- Bind group works to select value into buttons -->
-  <input
-    type="radio"
-    class="btn-check"
-    id="btnradio1"
-    name="radioButton"
-    value={radioValues.left}
-    bind:group={radioButton}
-  />
-  <label class="btn btn-outline-danger" for="btnradio1">
-    <i class="fas fa-chevron-left" />
-    Left pokemon</label
-  >
-
-  <input
-    type="radio"
-    class="btn-check"
-    id="btnradio2"
-    name="radioButton"
-    value={radioValues.rigth}
-    bind:group={radioButton}
-  />
-  <label class="btn btn-outline-danger" for="btnradio2">
-    Right pokemon
-    <i class="fas fa-chevron-right" />
-  </label>
+  {#each radioValues as button, i}
+    <input
+      type="radio"
+      id={"btnradio" + i}
+      class="btn-check"
+      name="radioButton"
+      value={i}
+      bind:group={radioButton}
+    />
+    <label class="btn btn-outline-danger" for={"btnradio" + i}>
+      <i class="fas {button.class}" />
+      {button.title}
+    </label>
+  {/each}
 </div>

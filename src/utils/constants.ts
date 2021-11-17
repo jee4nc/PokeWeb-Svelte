@@ -34,7 +34,14 @@ export const imgFight =
 
 
 // This constant use for check the radioButton left or right
-export const radioValues = {
-  left: 1,
-  rigth: 2,
-};
+export const radioValues = [
+  {
+    title: 'Left Pokemon',
+    class: 'fa-chevron-left',
+  },
+  {
+    title: 'Rigth Pokemon',
+    class: 'fa-chevron-right',
+  }
+]
+

@@ -18,10 +18,11 @@
   let namepokemon = "";
   // valueRadioButton is the value from child radioButton to this father component
   let valueRadioButton;
-  let pk = {};
+
+  let pk = [];
 
   for (let valueButton in radioValues) {
-    pk[radioValues[valueButton]] = {};
+    pk[valueButton] = {};
   }
 
   function assignPokemon(pokemon) {
@@ -68,26 +69,19 @@
   </div>
   <div class="container">
     <div class="row testing">
-      <CardComponent classessCard="col-4" pokemon={pk[radioValues.left]} />
-      <div class="col-4 vsClass">
-        <img
-          class="animate__animated animate__bounce"
-          src={versusLogo}
-          alt="VS"
-          style="max-width: 100%;"
-        />
-
-        <button
-          type="button"
-          class="btn btn-outline-danger btn-lg"
-          on:click={sendAlert}
-        >
-          <img src={imgFight} alt="" style="max-width: 42px;" />
-          <strong>Fight</strong>
-          <img src={imgFight} alt="" style="max-width: 42px;" /></button
-        >
-      </div>
-      <CardComponent classessCard="col-4" pokemon={pk[radioValues.rigth]} />
+      {#each Object.entries(pk) as [key, values], i}
+        <CardComponent classessCard="col-4" pokemon={values} />
+        {#if i + 1 != Object.entries(pk).length}
+          <div class="col-4 vsClass">
+            <img
+              class="animate__animated animate__bounce"
+              src={versusLogo}
+              alt="VS"
+              style="max-width: 100%;"
+            />
+          </div>
+        {/if}
+      {/each}
     </div>
   </div>
 </div>

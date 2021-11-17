@@ -1,8 +1,8 @@
 <script lang="ts">
   import CardComponent from "$components/list/cardComponent.svelte";
   import { getPokemon } from "$services/pokemonServices";
-  import { errorPokemonDefault } from "$src/stores/errorPokemon";
   // import { errorHandler } from "$utils/sharedFunctions";
+  import { errorPokemonDefault } from "$utils/constants";
 
   export let labelInput = "Search here!";
   export let buttonMessage = "Search";
@@ -22,7 +22,7 @@
       namepokemon = "";
     } catch {
       await errorHandler();
-      pokemon = $errorPokemonDefault;
+      pokemon = errorPokemonDefault;
       namepokemon = "";
     }
   }
