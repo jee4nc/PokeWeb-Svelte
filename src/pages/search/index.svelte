@@ -8,6 +8,7 @@
   import { versusLogo, imgTitleSearch, baseLink } from "$constants/links";
   import { errorPokemonDefault } from "$constants/errors";
   import { pokemons } from "$store/search";
+  import { battleFunction } from "$services/battle";
 
   let labelInput: string = "Search your pokemon";
   let searchName: string = "";
@@ -57,13 +58,16 @@
       </div>
       <div class="margincito">
         <RadioButtons bind:value={selectedPokemon} />
+        {#if $pokemons.length > 1}
+          <button on:click={() => battleFunction($pokemons)}>Figh!</button>
+        {/if}
       </div>
     </div>
   </div>
   <div class="container">
     <div class="row testing">
       {#each $pokemons as pokemon, i}
-        <Card classessCard="col-4" pokemon={pokemon} />
+        <Card classessCard="col-4" {pokemon} />
         {#if i + 1 != $pokemons.length}
           <div class="col-4 vsClass">
             <img

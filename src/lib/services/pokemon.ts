@@ -9,13 +9,14 @@ export async function extractData(response: any) {
     const data: any = await response.json();
     const types = getTypes(data);
     const { front_default } = data.sprites;
+    const baseStats = data.stats[0].base_stat;
     const filteredData = _.pick(data, [
       "name",
       "height",
       "weight",
       "base_experience",
     ]);
-    const result = { ...filteredData, front_default, types };
+    const result = { ...filteredData, front_default, types, baseStats };
 
     return result;
   } catch (err) {

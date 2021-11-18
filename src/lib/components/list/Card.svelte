@@ -28,6 +28,9 @@
         <p class="card-text">
           Type: {pokemon.types}
         </p>
+        <p class="card-text">
+          Base damage: {pokemon.baseStats}
+        </p>
       {:else}
         <h5 class="card-title">No hay nombre</h5>
         <p class="card-text">No hay tamaño</p>
