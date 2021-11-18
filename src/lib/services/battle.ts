@@ -1,5 +1,5 @@
 export const battleFunction = function (pokemonList: Array<any>) {
-  getPokemonForBattle(pokemonList);
+  return getPokemonForBattle(pokemonList);
 };
 
 export const getPokemonForBattle = function (pokemonList: Array<any>) {
@@ -15,7 +15,7 @@ export const getPokemonForBattle = function (pokemonList: Array<any>) {
       firstPokemon = getWinner(firstPokemon, nextPokemon);
     }
   }
-  alert(`El pokemon ganador es: ${firstPokemon.name}`);
+  return firstPokemon;
 };
 
 export const debilities = {

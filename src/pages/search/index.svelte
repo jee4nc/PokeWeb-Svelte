@@ -35,6 +35,19 @@
   function newPokemon() {
     $pokemons = [...$pokemons, {}];
   }
+
+  function getWinnerPokemon() {
+    let winner = battleFunction($pokemons);
+    console.log(winner);
+    console.log($pokemons.length);
+
+    for (let i = 0; i < $pokemons.length; i++) {
+      if (winner.name != $pokemons[i].name) {
+        pokemons.update((value) => value.splice(i));
+      }
+    }
+    console.log($pokemons.length);
+  }
 </script>
 
 <div class="index">
@@ -59,7 +72,7 @@
       <div class="margincito">
         <RadioButtons bind:value={selectedPokemon} />
         {#if $pokemons.length > 1}
-          <button on:click={() => battleFunction($pokemons)}>Figh!</button>
+          <button on:click={getWinnerPokemon}>Figth!</button>
         {/if}
       </div>
     </div>
