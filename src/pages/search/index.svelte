@@ -5,7 +5,12 @@
   import RadioButtons from "$components/search/RadioButtons.svelte";
 
   import { getPokemon } from "$services/pokemon";
-  import { versusLogo, imgTitleSearch, baseLink } from "$constants/links";
+  import {
+    versusLogo,
+    imgTitleSearch,
+    baseLink,
+    imgFight,
+  } from "$constants/links";
   import { errorPokemonDefault } from "$constants/errors";
   import { pokemons } from "$store/search";
   import { battleFunction } from "$services/battle";
@@ -13,6 +18,7 @@
   let labelInput: string = "Search your pokemon";
   let searchName: string = "";
   let selectedPokemon: number;
+  let battleResult: boolean | string = false;
 
   function assignPokemon(pokemon: any) {
     if ($pokemons.length == 0) {
@@ -38,15 +44,16 @@
 
   function getWinnerPokemon() {
     let winner = battleFunction($pokemons);
-    console.log(winner);
-    console.log($pokemons.length);
-
     for (let i = 0; i < $pokemons.length; i++) {
-      if (winner.name != $pokemons[i].name) {
-        pokemons.update((value) => value.splice(i));
+      if (winner.name === $pokemons[i].name) {
+        pokemons.set([winner]);
       }
     }
-    console.log($pokemons.length);
+    battleResult = "THE WINNER IS : ";
+    setTimeout(() => {
+      battleResult = false;
+      pokemons.set([]);
+    }, 4000);
   }
 </script>
 
@@ -67,30 +74,41 @@
             bind:value={searchName}
           />
         </form>
-        <button on:click={newPokemon}> add </button>
-      </div>
-      <div class="margincito">
-        <RadioButtons bind:value={selectedPokemon} />
-        {#if $pokemons.length > 1}
-          <button on:click={getWinnerPokemon}>Figth!</button>
+        {#if $pokemons.length < 9}
+          <button
+            class="btn btn-danger"
+            style="margin-left: 1em;"
+            on:click={newPokemon}
+          >
+            add
+          </button>
         {/if}
       </div>
     </div>
   </div>
+  <div class="margincito">
+    <RadioButtons bind:value={selectedPokemon} />
+    <div>
+      {#if $pokemons.length > 1}
+        <button
+          class="btn btn-danger"
+          style="margin-top: 7px;"
+          on:click={getWinnerPokemon}
+        >
+          <img src={imgFight} style="max-width: 34px;" alt="..." />
+          Figth!
+          <img src={imgFight} style="max-width: 34px;" alt="..." />
+        </button>
+      {/if}
+    </div>
+  </div>
   <div class="container">
     <div class="row testing">
-      {#each $pokemons as pokemon, i}
+      {#if battleResult}
+        <h1>{battleResult}</h1>
+      {/if}
+      {#each $pokemons as pokemon}
         <Card classessCard="col-4" {pokemon} />
-        {#if i + 1 != $pokemons.length}
-          <div class="col-4 vsClass">
-            <img
-              class="animate__animated animate__bounce"
-              src={versusLogo}
-              alt="VS"
-              style="max-width: 100%;"
-            />
-          </div>
-        {/if}
       {/each}
     </div>
   </div>
@@ -105,8 +123,7 @@
   }
   .margincito {
     padding-top: 10px;
-  }
-  .vsClass {
+    /* border: red solid 4px; */
     text-align: center;
   }
 </style>
