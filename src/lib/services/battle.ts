@@ -69,3 +69,5 @@ export const getWinner = function (pokemon1: any, pokemonToCompare: any) {
     return pokemon1;
   }
 };
+
+export const verifyCompetitors = function () {};

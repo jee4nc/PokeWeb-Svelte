@@ -3,38 +3,23 @@
   import { getPokemon } from "$services/pokemon";
   import { errorPokemonDefault } from "$constants/errors";
 
-  export let labelInput: string = "Search here!";
-  export let buttonMessage: string = "Search";
-
-  let colorError: string = "";
-  let classInput: string = "form-control";
+  let labelInput: string = "Search here!";
+  let buttonMessage: string = "Search";
   let pokemon = {};
   let namepokemon: string = "";
+  let isError = false;
 
-  // Make loading component
   async function handleSubmit() {
-    // FIX validation if request its succesfully
-    // Change names of var
     try {
       const receivedPokemon = await getPokemon(namepokemon.toLowerCase());
       pokemon = receivedPokemon;
+      isError = false;
       namepokemon = "";
     } catch {
-      await errorHandler();
+      isError = true;
       pokemon = errorPokemonDefault;
       namepokemon = "";
     }
-  }
-
-  async function errorHandler() {
-    labelInput = "Invalid pokemon Name";
-    colorError = "border : 2px solid red";
-    classInput = "form-control animate__animated animate__shakeX";
-    setTimeout(() => {
-      labelInput = "Search here!";
-      colorError = "";
-      classInput = "form-control";
-    }, 3000);
   }
 </script>
 
@@ -44,8 +29,8 @@
       <form on:submit|preventDefault={handleSubmit}>
         <input
           type="text"
-          class={classInput}
-          style={colorError}
+          class="form-control"
+          class:input-error={isError}
           placeholder={labelInput}
           aria-label="Username"
           aria-describedby="basic-addon1"
@@ -68,5 +53,8 @@
   }
   .card-div {
     text-align: center;
+  }
+  .input-error {
+    border: 4px solid red;
   }
 </style>

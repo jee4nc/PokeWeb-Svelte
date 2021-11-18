@@ -5,20 +5,17 @@
   import RadioButtons from "$components/search/RadioButtons.svelte";
 
   import { getPokemon } from "$services/pokemon";
-  import {
-    versusLogo,
-    imgTitleSearch,
-    baseLink,
-    imgFight,
-  } from "$constants/links";
+  import { imgTitleSearch, baseLink } from "$constants/links";
   import { errorPokemonDefault } from "$constants/errors";
   import { pokemons } from "$store/search";
   import { battleFunction } from "$services/battle";
+  import LogoFightButton from "$src/lib/components/search/LogoFightButton.svelte";
 
   let labelInput: string = "Search your pokemon";
   let searchName: string = "";
   let selectedPokemon: number;
   let battleResult: boolean | string = false;
+  let isError = false;
 
   function assignPokemon(pokemon: any) {
     if ($pokemons.length == 0) {
@@ -33,7 +30,9 @@
     try {
       const receivedPokemon = await getPokemon(searchName);
       assignPokemon(receivedPokemon);
+      isError = false;
     } catch {
+      isError = true;
       assignPokemon(errorPokemonDefault);
     }
   }
@@ -68,6 +67,7 @@
           <input
             type="text"
             class="form-control"
+            class:input-error={isError}
             placeholder={labelInput}
             aria-label="Username"
             aria-describedby="basic-addon1"
@@ -95,9 +95,9 @@
           style="margin-top: 7px;"
           on:click={getWinnerPokemon}
         >
-          <img src={imgFight} style="max-width: 34px;" alt="..." />
+          <LogoFightButton />
           Figth!
-          <img src={imgFight} style="max-width: 34px;" alt="..." />
+          <LogoFightButton />
         </button>
       {/if}
     </div>
@@ -123,7 +123,9 @@
   }
   .margincito {
     padding-top: 10px;
-    /* border: red solid 4px; */
     text-align: center;
+  }
+  .input-error {
+    border: 4px solid red;
   }
 </style>
