@@ -40,7 +40,6 @@
   }
 
   function newPokemon() {
-    // showFightBtn = false;
     $pokemons = [...$pokemons, {}];
   }
 

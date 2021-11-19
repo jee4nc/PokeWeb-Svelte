@@ -45,6 +45,7 @@ export const evaluateBattle = function (firstPokemon: any, secondPokemon: any) {
   const baseDamageSecondPokemon = secondPokemon.baseStats;
   const diffenceBaseDamage = baseDamageFirstPokemon - baseDamageSecondPokemon;
 
+  // TODO: Esto solo toma en consideracion el elemento principal. No los secundarios
   if (debilities[firstPokemon.types[0]].includes(secondPokemon.types[0])) {
     if (diffenceBaseDamage >= 12) {
       return defeated;
