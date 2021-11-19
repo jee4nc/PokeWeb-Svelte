@@ -17,6 +17,8 @@
   let battleResult: boolean | string = false;
   let isError = false;
 
+  let showFightBtn = false;
+
   function assignPokemon(pokemon: any) {
     if ($pokemons.length == 0) {
       $pokemons = [...$pokemons, pokemon];
@@ -30,14 +32,15 @@
     try {
       const receivedPokemon = await getPokemon(searchName);
       assignPokemon(receivedPokemon);
-      isError = false;
+      handleFight();
     } catch {
-      isError = true;
+      isError = false;
       assignPokemon(errorPokemonDefault);
     }
   }
 
   function newPokemon() {
+    // showFightBtn = false;
     $pokemons = [...$pokemons, {}];
   }
 
@@ -51,9 +54,27 @@
     battleResult = "THE WINNER IS : ";
     setTimeout(() => {
       battleResult = false;
-      pokemons.set([]);
+      pokemons.set([]), (showFightBtn = false);
     }, 4000);
   }
+
+  const handleFight = () => {
+    for (let i = 0; i < $pokemons.length; i++) {
+      if ($pokemons[i].name === "Invalid Name") {
+        showFightBtn = false;
+        return;
+      }
+      if (!$pokemons[i].name) {
+        showFightBtn = false;
+        return;
+      }
+      if ($pokemons.length < 2) {
+        showFightBtn = false;
+        return;
+      }
+      showFightBtn = true;
+    }
+  };
 </script>
 
 <div class="index">
@@ -89,7 +110,7 @@
   <div class="margincito">
     <RadioButtons bind:value={selectedPokemon} />
     <div>
-      {#if $pokemons.length > 1}
+      {#if showFightBtn}
         <button
           class="btn btn-danger"
           style="margin-top: 7px;"
